@@ -1,1356 +1,1350 @@
-<<<<<<< HEAD <!DOCTYPE html>
-    <html lang="en">
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Tanya Maurya Portfolio</title>
+    <title>Tanya Maurya Portfolio</title>
 
-        <!-- Tailwind -->
-        <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: #020617;
+        }
+
+        body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-color: #020617;
+    background-image:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.18), transparent 40%),
+        linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
+    background-attachment: fixed;
+}
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-space {
+            padding-top: 110px;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #a855f7;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .hero-image {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
             }
 
-            html {
-                scroll-behavior: smooth;
-                background: #020617;
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .mobile-menu {
+                display: none;
             }
 
-            body {
-                font-family: 'Poppins', sans-serif;
-                min-height: 100vh;
-                background-color: #020617;
-                background-image:
-                    radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 40%),
-                    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.18), transparent 40%),
-                    linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
-                background-attachment: fixed;
+            .mobile-menu.active {
+                display: flex;
             }
+        }
+    </style>
 
-            .glass {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(18px);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-            }
+</head>
 
-            .section-space {
-                padding-top: 110px;
-            }
+<body>
 
-            .nav-link {
-                position: relative;
-            }
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/70 backdrop-blur-2xl border-b border-white/10">
 
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: -6px;
-                width: 0%;
-                height: 2px;
-                background: #a855f7;
-                transition: 0.3s;
-            }
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
 
-            .nav-link:hover::after {
-                width: 100%;
-            }
+            <div class="flex items-center justify-between h-20">
 
-            .project-card:hover img {
-                transform: scale(1.08);
-            }
+                <!-- Logo -->
+                <h1 class="text-3xl font-bold text-violet-400 tracking-wide cursor-pointer">
+                    Tanya Maurya
+                </h1>
 
-            .hero-image {
-                animation: float 4s ease-in-out infinite;
-            }
-
-            @keyframes float {
-
-                0%,
-                100% {
-                    transform: translateY(0px);
-                }
-
-                50% {
-                    transform: translateY(-12px);
-                }
-            }
-
-            @media(max-width:768px) {
-
-                .mobile-menu {
-                    display: none;
-                }
-
-                .mobile-menu.active {
-                    display: flex;
-                }
-            }
-        </style>
-
-    </head>
-
-    <body>
-
-        <!-- Navbar -->
-        <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/70 backdrop-blur-2xl border-b border-white/10">
-
-            <div class="max-w-7xl mx-auto px-6 md:px-10">
-
-                <div class="flex items-center justify-between h-20">
-
-                    <!-- Logo -->
-                    <h1 class="text-3xl font-bold text-violet-400 tracking-wide cursor-pointer">
-                        Tanya Maurya
-                    </h1>
-
-                    <!-- Desktop Menu -->
-                    <ul class="hidden md:flex items-center gap-10 text-gray-300 font-medium">
-
-                        <li>
-                            <a href="#home" class="nav-link hover:text-violet-400 transition duration-300">
-                                Home
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#about" class="nav-link hover:text-violet-400 transition duration-300">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#projects" class="nav-link hover:text-violet-400 transition duration-300">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#contact" class="nav-link hover:text-violet-400 transition duration-300">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <!-- Mobile Toggle -->
-                    <button class="md:hidden menu-btn flex flex-col gap-1.5">
-
-                        <span class="w-7 h-[3px] bg-white rounded-full"></span>
-                        <span class="w-7 h-[3px] bg-white rounded-full"></span>
-                        <span class="w-7 h-[3px] bg-white rounded-full"></span>
-
-                    </button>
-
-                </div>
-
-                <!-- Mobile Menu -->
-                <ul class="mobile-menu flex-col gap-6 pb-8 text-gray-300 font-medium md:hidden">
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-10 text-gray-300 font-medium">
 
                     <li>
-                        <a href="#home" class="mobile-link hover:text-violet-400">
+                        <a href="#home" class="nav-link hover:text-violet-400 transition duration-300">
                             Home
                         </a>
                     </li>
 
                     <li>
-                        <a href="#about" class="mobile-link hover:text-violet-400">
+                        <a href="#about" class="nav-link hover:text-violet-400 transition duration-300">
                             About
                         </a>
                     </li>
 
                     <li>
-                        <a href="#projects" class="mobile-link hover:text-violet-400">
+                        <a href="#projects" class="nav-link hover:text-violet-400 transition duration-300">
                             Projects
                         </a>
                     </li>
 
                     <li>
-                        <a href="#contact" class="mobile-link hover:text-violet-400">
+                        <a href="#contact" class="nav-link hover:text-violet-400 transition duration-300">
                             Contact
                         </a>
                     </li>
 
                 </ul>
 
+                <!-- Mobile Toggle -->
+                <button class="md:hidden menu-btn flex flex-col gap-1.5">
+
+                    <span class="w-7 h-[3px] bg-white rounded-full"></span>
+                    <span class="w-7 h-[3px] bg-white rounded-full"></span>
+                    <span class="w-7 h-[3px] bg-white rounded-full"></span>
+
+                </button>
+
             </div>
 
-        </nav>
+            <!-- Mobile Menu -->
+            <ul class="mobile-menu flex-col gap-6 pb-8 text-gray-300 font-medium md:hidden">
 
-        <!-- Hero -->
-        <section id="home" class="min-h-screen flex items-center section-space px-6 md:px-10">
+                <li>
+                    <a href="#home" class="mobile-link hover:text-violet-400">
+                        Home
+                    </a>
+                </li>
 
-            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+                <li>
+                    <a href="#about" class="mobile-link hover:text-violet-400">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="mobile-link hover:text-violet-400">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="mobile-link hover:text-violet-400">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center section-space px-6 md:px-10">
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Left -->
+            <div>
+
+                <p class="text-violet-400 text-xl font-medium mb-4">
+                    Hello, I'm
+                </p>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Tanya Maurya
+                </h1>
+
+                <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
+                    PHP Laravel Developer
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-9 mb-10 max-w-2xl">
+                    I build responsive websites, REST APIs, authentication
+                    systems and modern user-friendly interfaces using Laravel,
+                    Tailwind CSS and frontend technologies.
+                </p>
+
+                <div class="flex flex-wrap gap-5">
+
+                    <a href="#contact"
+                        class="bg-violet-600 hover:bg-violet-700 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105 shadow-lg shadow-violet-500/30">
+                        Hire Me
+                    </a>
+
+                    <a href="#projects"
+                        class="border border-violet-500 hover:bg-violet-600 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105">
+                        View Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+            <div class="relative flex justify-center">
+
+                <div class="absolute w-[350px] h-[350px] bg-violet-500 rounded-full blur-[120px] opacity-30">
+                </div>
+
+                <img src="img.jpg" alt="Tanya"
+                    class="hero-image relative w-[320px] h-[320px] md:w-[430px] md:h-[430px] rounded-full object-cover border-4 border-violet-500 shadow-[0_0_80px_rgba(139,92,246,0.7)]" />
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about" class="pt-10 md:pt-20 px-6 md:px-10">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="mb-20">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    About Me
+                </h2>
+
+                <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-20 items-center">
 
                 <!-- Left -->
                 <div>
 
-                    <p class="text-violet-400 text-xl font-medium mb-4">
-                        Hello, I'm
+                    <h3 class="text-3xl font-semibold text-violet-400 mb-8 leading-snug">
+                        Passionate Laravel Developer
+                    </h3>
+
+                    <p class="text-gray-400 text-lg leading-9 mb-6">
+                        I am Tanya Maurya, a passionate web developer with
+                        experience in Laravel, frontend development, API
+                        integration and authentication systems.
                     </p>
 
-                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-                        Tanya Maurya
-                    </h1>
-
-                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
-                        PHP Laravel Developer
-                    </h2>
-
-                    <p class="text-gray-400 text-lg leading-9 mb-10 max-w-2xl">
-                        I build responsive websites, REST APIs, authentication
-                        systems and modern user-friendly interfaces using Laravel,
-                        Tailwind CSS and frontend technologies.
+                    <p class="text-gray-400 text-lg leading-9">
+                        I enjoy creating responsive and user-friendly websites
+                        with modern UI, clean code and smooth user experiences.
                     </p>
 
-                    <div class="flex flex-wrap gap-5">
+                </div>
 
-                        <a href="#contact"
-                            class="bg-violet-600 hover:bg-violet-700 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105 shadow-lg shadow-violet-500/30">
-                            Hire Me
-                        </a>
+                <!-- Right -->
+                <div class="grid sm:grid-cols-2 gap-6">
 
-                        <a href="#projects"
-                            class="border border-violet-500 hover:bg-violet-600 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105">
-                            View Projects
-                        </a>
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            Frontend
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            HTML, CSS, JavaScript, Bootstrap & Tailwind CSS
+                        </p>
+
+                    </div>
+
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            Backend
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            PHP, Laravel & MySQL Development
+                        </p>
+
+                    </div>
+
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            APIs
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            REST API Integration & Authentication Systems
+                        </p>
+
+                    </div>
+
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            Tools
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            VS Code, GitHub, Postman & Modern Workflow
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="pt-10 md:pt-20 px-6 md:px-10">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="mb-20">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    Projects
+                </h2>
+
+                <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card -->
+                <div
+                    class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
+
+                    <div class="overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4" alt="project"
+                            class="w-full h-56 object-cover transition duration-500" />
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Food Ordering Website
+                        </h3>
+
+                        <p class="text-gray-400 leading-7 mb-5">
+                            Responsive food ordering website built using Laravel,
+                            Bootstrap and MySQL.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Laravel
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Bootstrap
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                MySQL
+                            </span>
+
+                        </div>
+
+                        <button class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
+
+                    <div class="overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="project"
+                            class="w-full h-56 object-cover transition duration-500" />
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Blog Management System
+                        </h3>
+
+                        <p class="text-gray-400 leading-7 mb-5">
+                            Modern blog platform with authentication and admin
+                            dashboard.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                PHP
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Laravel
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                API
+                            </span>
+
+                        </div>
+
+                        <button class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
+
+                    <div class="overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="project"
+                            class="w-full h-56 object-cover transition duration-500" />
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Student Management System
+                        </h3>
+
+                        <p class="text-gray-400 leading-7 mb-5">
+                            Dashboard system for managing students, attendance
+                            and records.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Laravel
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Dashboard
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                MySQL
+                            </span>
+
+                        </div>
+
+                        <button class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="pt-10 md:pt-20 px-6 md:px-10 pb-16">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="mb-20">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    Contact Me
+                </h2>
+
+                <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-14">
+
+                <!-- Left -->
+                <div>
+
+                    <h3 class="text-3xl font-semibold mb-6 text-violet-400">
+                        Let's Work Together
+                    </h3>
+
+                    <p class="text-gray-400 text-lg leading-8 mb-10">
+                        I am available for freelance projects, business websites,
+                        portfolio websites and Laravel development work.
+                    </p>
+
+                    <div class="space-y-5">
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h4 class="text-xl font-semibold mb-2">
+                                Email
+                            </h4>
+
+                            <p class="text-gray-400">
+                                tanyamaurya998@gmail.com
+                            </p>
+
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h4 class="text-xl font-semibold mb-2">
+                                Instagram
+                            </h4>
+
+                            <a href="https://instagram.com/mauryatanya12" target="_blank"
+                                class="text-gray-400 hover:text-violet-400 transition duration-300 decoration-none">
+                                @mauryatanya12
+                            </a>
+
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h4 class="text-xl font-semibold mb-2">
+                                WhatsApp
+                            </h4>
+
+                            <p class="text-gray-400">
+                                +91 8604955266
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
 
                 <!-- Right -->
-                <div class="relative flex justify-center">
+                <div class="glass rounded-3xl p-8">
 
-                    <div class="absolute w-[350px] h-[350px] bg-violet-500 rounded-full blur-[120px] opacity-30">
-                    </div>
+                    <form class="space-y-6">
 
-                    <img src="img.jpg" alt="Tanya"
-                        class="hero-image relative w-[320px] h-[320px] md:w-[430px] md:h-[430px] rounded-full object-cover border-4 border-violet-500 shadow-[0_0_80px_rgba(139,92,246,0.7)]" />
+                        <div>
+
+                            <label class="block mb-2 text-gray-300">
+                                Your Name
+                            </label>
+
+                            <input type="text" placeholder="Enter your name"
+                                class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
+
+                        </div>
+
+                        <div>
+
+                            <label class="block mb-2 text-gray-300">
+                                Email Address
+                            </label>
+
+                            <input type="email" placeholder="Enter your email"
+                                class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
+
+                        </div>
+
+                        <div>
+
+                            <label class="block mb-2 text-gray-300">
+                                Message
+                            </label>
+
+                            <textarea rows="5" placeholder="Write your message..."
+                                class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500"></textarea>
+
+                        </div>
+
+                        <button
+                            class="w-full bg-violet-600 hover:bg-violet-700 px-7 py-4 rounded-2xl font-medium transition duration-300 hover:scale-[1.02] shadow-lg shadow-violet-500/30">
+                            Send Message
+                        </button>
+
+                    </form>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
-        <!-- About -->
-        <section id="about" class="pt-10 md:pt-20 px-6 md:px-10">
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 px-6">
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
+
+            <h2 class="text-2xl font-bold text-violet-400">
+                Tanya Maurya
+            </h2>
+
+            <p class="text-gray-500 text-center">
+                © 2026 Tanya Maurya. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Script -->
+    <script>
+
+        const menuBtn = document.querySelector(".menu-btn");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("active");
+            });
+        });
+
+    </script>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tanya Maurya Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-            <div class="max-w-7xl mx-auto">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <!-- Heading -->
-                <div class="mb-20">
+        html {
+            scroll-behavior: smooth;
+            background: #020617;
+        }
 
-                    <h2 class="text-4xl md:text-5xl font-bold mb-5">
-                        About Me
-                    </h2>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: white;
+            background:
+                radial-gradient(circle at top left,
+                    rgba(139, 92, 246, 0.25),
+                    transparent 25%),
+                radial-gradient(circle at bottom right,
+                    rgba(168, 85, 247, 0.18),
+                    transparent 25%),
+                linear-gradient(135deg,
+                    #020617 0%,
+                    #0f172a 45%,
+                    #1e1b4b 100%);
+        }
 
-                    <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-                </div>
+        .section-space {
+            padding-top: 110px;
+        }
 
-                <div class="grid md:grid-cols-2 gap-20 items-center">
+        .nav-link {
+            position: relative;
+        }
 
-                    <!-- Left -->
-                    <div>
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #a855f7;
+            transition: 0.3s;
+        }
 
-                        <h3 class="text-3xl font-semibold text-violet-400 mb-8 leading-snug">
-                            Passionate Laravel Developer
-                        </h3>
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
-                        <p class="text-gray-400 text-lg leading-9 mb-6">
-                            I am Tanya Maurya, a passionate web developer with
-                            experience in Laravel, frontend development, API
-                            integration and authentication systems.
-                        </p>
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
 
-                        <p class="text-gray-400 text-lg leading-9">
-                            I enjoy creating responsive and user-friendly websites
-                            with modern UI, clean code and smooth user experiences.
-                        </p>
+        .hero-image {
+            animation: float 4s ease-in-out infinite;
+        }
 
-                    </div>
+        @keyframes float {
 
-                    <!-- Right -->
-                    <div class="grid sm:grid-cols-2 gap-6">
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
 
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+            50% {
+                transform: translateY(-12px);
+            }
+        }
 
-                            <h4 class="text-2xl font-semibold mb-4">
-                                Frontend
-                            </h4>
+        @media(max-width:768px) {
 
-                            <p class="text-gray-400 leading-7">
-                                HTML, CSS, JavaScript, Bootstrap & Tailwind CSS
-                            </p>
+            .mobile-menu {
+                display: none;
+            }
 
-                        </div>
+            .mobile-menu.active {
+                display: flex;
+            }
+        }
+    </style>
 
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+</head>
 
-                            <h4 class="text-2xl font-semibold mb-4">
-                                Backend
-                            </h4>
+<body>
 
-                            <p class="text-gray-400 leading-7">
-                                PHP, Laravel & MySQL Development
-                            </p>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/70 backdrop-blur-2xl border-b border-white/10">
 
-                        </div>
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
 
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+            <div class="flex items-center justify-between h-20">
 
-                            <h4 class="text-2xl font-semibold mb-4">
-                                APIs
-                            </h4>
-
-                            <p class="text-gray-400 leading-7">
-                                REST API Integration & Authentication Systems
-                            </p>
-
-                        </div>
-
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
-
-                            <h4 class="text-2xl font-semibold mb-4">
-                                Tools
-                            </h4>
-
-                            <p class="text-gray-400 leading-7">
-                                VS Code, GitHub, Postman & Modern Workflow
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="pt-10 md:pt-20 px-6 md:px-10">
-
-            <div class="max-w-7xl mx-auto">
-
-                <!-- Heading -->
-                <div class="mb-20">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-5">
-                        Projects
-                    </h2>
-
-                    <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
-
-                </div>
-
-                <!-- Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Card -->
-                    <div
-                        class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
-
-                        <div class="overflow-hidden">
-
-                            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4" alt="project"
-                                class="w-full h-56 object-cover transition duration-500" />
-
-                        </div>
-
-                        <div class="p-6">
-
-                            <h3 class="text-2xl font-semibold mb-3">
-                                Food Ordering Website
-                            </h3>
-
-                            <p class="text-gray-400 leading-7 mb-5">
-                                Responsive food ordering website built using Laravel,
-                                Bootstrap and MySQL.
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mb-6">
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Laravel
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Bootstrap
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    MySQL
-                                </span>
-
-                            </div>
-
-                            <button
-                                class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
-                                View Project
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Card -->
-                    <div
-                        class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
-
-                        <div class="overflow-hidden">
-
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="project"
-                                class="w-full h-56 object-cover transition duration-500" />
-
-                        </div>
-
-                        <div class="p-6">
-
-                            <h3 class="text-2xl font-semibold mb-3">
-                                Blog Management System
-                            </h3>
-
-                            <p class="text-gray-400 leading-7 mb-5">
-                                Modern blog platform with authentication and admin
-                                dashboard.
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mb-6">
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    PHP
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Laravel
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    API
-                                </span>
-
-                            </div>
-
-                            <button
-                                class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
-                                View Project
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Card -->
-                    <div
-                        class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
-
-                        <div class="overflow-hidden">
-
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="project"
-                                class="w-full h-56 object-cover transition duration-500" />
-
-                        </div>
-
-                        <div class="p-6">
-
-                            <h3 class="text-2xl font-semibold mb-3">
-                                Student Management System
-                            </h3>
-
-                            <p class="text-gray-400 leading-7 mb-5">
-                                Dashboard system for managing students, attendance
-                                and records.
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mb-6">
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Laravel
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Dashboard
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    MySQL
-                                </span>
-
-                            </div>
-
-                            <button
-                                class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
-                                View Project
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="pt-10 md:pt-20 px-6 md:px-10 pb-16">
-            <div class="max-w-7xl mx-auto">
-
-                <!-- Heading -->
-                <div class="mb-20">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-5">
-                        Contact Me
-                    </h2>
-
-                    <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
-
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-14">
-
-                    <!-- Left -->
-                    <div>
-
-                        <h3 class="text-3xl font-semibold mb-6 text-violet-400">
-                            Let's Work Together
-                        </h3>
-
-                        <p class="text-gray-400 text-lg leading-8 mb-10">
-                            I am available for freelance projects, business websites,
-                            portfolio websites and Laravel development work.
-                        </p>
-
-                        <div class="space-y-5">
-
-                            <div class="glass rounded-2xl p-5">
-
-                                <h4 class="text-xl font-semibold mb-2">
-                                    Email
-                                </h4>
-
-                                <p class="text-gray-400">
-                                    tanyamaurya998@gmail.com
-                                </p>
-
-                            </div>
-
-                            <div class="glass rounded-2xl p-5">
-
-                                <h4 class="text-xl font-semibold mb-2">
-                                    Instagram
-                                </h4>
-
-                                <a href="https://instagram.com/mauryatanya12" target="_blank"
-                                    class="text-gray-400 hover:text-violet-400 transition duration-300 decoration-none">
-                                    @mauryatanya12
-                                </a>
-
-                            </div>
-
-                            <div class="glass rounded-2xl p-5">
-
-                                <h4 class="text-xl font-semibold mb-2">
-                                    WhatsApp
-                                </h4>
-
-                                <p class="text-gray-400">
-                                    +91 8604955266
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Right -->
-                    <div class="glass rounded-3xl p-8">
-
-                        <form class="space-y-6">
-
-                            <div>
-
-                                <label class="block mb-2 text-gray-300">
-                                    Your Name
-                                </label>
-
-                                <input type="text" placeholder="Enter your name"
-                                    class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
-
-                            </div>
-
-                            <div>
-
-                                <label class="block mb-2 text-gray-300">
-                                    Email Address
-                                </label>
-
-                                <input type="email" placeholder="Enter your email"
-                                    class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
-
-                            </div>
-
-                            <div>
-
-                                <label class="block mb-2 text-gray-300">
-                                    Message
-                                </label>
-
-                                <textarea rows="5" placeholder="Write your message..."
-                                    class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500"></textarea>
-
-                            </div>
-
-                            <button
-                                class="w-full bg-violet-600 hover:bg-violet-700 px-7 py-4 rounded-2xl font-medium transition duration-300 hover:scale-[1.02] shadow-lg shadow-violet-500/30">
-                                Send Message
-                            </button>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Footer -->
-        <footer class="border-t border-white/10 py-8 px-6">
-
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
-
-                <h2 class="text-2xl font-bold text-violet-400">
+                <!-- Logo -->
+                <h1 class="text-3xl font-bold text-violet-400 tracking-wide cursor-pointer">
                     Tanya Maurya
-                </h2>
+                </h1>
 
-                <p class="text-gray-500 text-center">
-                    © 2026 Tanya Maurya. All Rights Reserved.
-                </p>
-
-            </div>
-
-        </footer>
-
-        <!-- Script -->
-        <script>
-
-            const menuBtn = document.querySelector(".menu-btn");
-            const mobileMenu = document.querySelector(".mobile-menu");
-            const mobileLinks = document.querySelectorAll(".mobile-link");
-
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("active");
-            });
-
-            mobileLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    mobileMenu.classList.remove("active");
-                });
-            });
-
-        </script>
-
-    </body>
-
-    =======
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <title>Tanya Maurya Portfolio</title>
-
-        <!-- Tailwind -->
-        <script src="https://cdn.tailwindcss.com"></script>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet">
-
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            html {
-                scroll-behavior: smooth;
-                background: #020617;
-            }
-
-            body {
-                font-family: 'Poppins', sans-serif;
-                overflow-x: hidden;
-                color: white;
-                background:
-                    radial-gradient(circle at top left,
-                        rgba(139, 92, 246, 0.25),
-                        transparent 25%),
-                    radial-gradient(circle at bottom right,
-                        rgba(168, 85, 247, 0.18),
-                        transparent 25%),
-                    linear-gradient(135deg,
-                        #020617 0%,
-                        #0f172a 45%,
-                        #1e1b4b 100%);
-            }
-
-            .glass {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(18px);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-            }
-
-            .section-space {
-                padding-top: 110px;
-            }
-
-            .nav-link {
-                position: relative;
-            }
-
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: -6px;
-                width: 0%;
-                height: 2px;
-                background: #a855f7;
-                transition: 0.3s;
-            }
-
-            .nav-link:hover::after {
-                width: 100%;
-            }
-
-            .project-card:hover img {
-                transform: scale(1.08);
-            }
-
-            .hero-image {
-                animation: float 4s ease-in-out infinite;
-            }
-
-            @keyframes float {
-
-                0%,
-                100% {
-                    transform: translateY(0px);
-                }
-
-                50% {
-                    transform: translateY(-12px);
-                }
-            }
-
-            @media(max-width:768px) {
-
-                .mobile-menu {
-                    display: none;
-                }
-
-                .mobile-menu.active {
-                    display: flex;
-                }
-            }
-        </style>
-
-    </head>
-
-    <body>
-
-        <!-- Navbar -->
-        <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/70 backdrop-blur-2xl border-b border-white/10">
-
-            <div class="max-w-7xl mx-auto px-6 md:px-10">
-
-                <div class="flex items-center justify-between h-20">
-
-                    <!-- Logo -->
-                    <h1 class="text-3xl font-bold text-violet-400 tracking-wide cursor-pointer">
-                        Tanya Maurya
-                    </h1>
-
-                    <!-- Desktop Menu -->
-                    <ul class="hidden md:flex items-center gap-10 text-gray-300 font-medium">
-
-                        <li>
-                            <a href="#home" class="nav-link hover:text-violet-400 transition duration-300">
-                                Home
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#about" class="nav-link hover:text-violet-400 transition duration-300">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#projects" class="nav-link hover:text-violet-400 transition duration-300">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#contact" class="nav-link hover:text-violet-400 transition duration-300">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <!-- Mobile Toggle -->
-                    <button class="md:hidden menu-btn flex flex-col gap-1.5">
-
-                        <span class="w-7 h-[3px] bg-white rounded-full"></span>
-                        <span class="w-7 h-[3px] bg-white rounded-full"></span>
-                        <span class="w-7 h-[3px] bg-white rounded-full"></span>
-
-                    </button>
-
-                </div>
-
-                <!-- Mobile Menu -->
-                <ul class="mobile-menu flex-col gap-6 pb-8 text-gray-300 font-medium md:hidden">
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-10 text-gray-300 font-medium">
 
                     <li>
-                        <a href="#home" class="mobile-link hover:text-violet-400">
+                        <a href="#home" class="nav-link hover:text-violet-400 transition duration-300">
                             Home
                         </a>
                     </li>
 
                     <li>
-                        <a href="#about" class="mobile-link hover:text-violet-400">
+                        <a href="#about" class="nav-link hover:text-violet-400 transition duration-300">
                             About
                         </a>
                     </li>
 
                     <li>
-                        <a href="#projects" class="mobile-link hover:text-violet-400">
+                        <a href="#projects" class="nav-link hover:text-violet-400 transition duration-300">
                             Projects
                         </a>
                     </li>
 
                     <li>
-                        <a href="#contact" class="mobile-link hover:text-violet-400">
+                        <a href="#contact" class="nav-link hover:text-violet-400 transition duration-300">
                             Contact
                         </a>
                     </li>
 
                 </ul>
 
+                <!-- Mobile Toggle -->
+                <button class="md:hidden menu-btn flex flex-col gap-1.5">
+
+                    <span class="w-7 h-[3px] bg-white rounded-full"></span>
+                    <span class="w-7 h-[3px] bg-white rounded-full"></span>
+                    <span class="w-7 h-[3px] bg-white rounded-full"></span>
+
+                </button>
+
             </div>
 
-        </nav>
+            <!-- Mobile Menu -->
+            <ul class="mobile-menu flex-col gap-6 pb-8 text-gray-300 font-medium md:hidden">
 
-        <!-- Hero -->
-        <section id="home" class="min-h-screen flex items-center section-space px-6 md:px-10">
+                <li>
+                    <a href="#home" class="mobile-link hover:text-violet-400">
+                        Home
+                    </a>
+                </li>
 
-            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+                <li>
+                    <a href="#about" class="mobile-link hover:text-violet-400">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="mobile-link hover:text-violet-400">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="mobile-link hover:text-violet-400">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center section-space px-6 md:px-10">
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Left -->
+            <div>
+
+                <p class="text-violet-400 text-xl font-medium mb-4">
+                    Hello, I'm
+                </p>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Tanya Maurya
+                </h1>
+
+                <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
+                    PHP Laravel Developer
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-9 mb-10 max-w-2xl">
+                    I build responsive websites, REST APIs, authentication
+                    systems and modern user-friendly interfaces using Laravel,
+                    Tailwind CSS and frontend technologies.
+                </p>
+
+                <div class="flex flex-wrap gap-5">
+
+                    <a href="#contact"
+                        class="bg-violet-600 hover:bg-violet-700 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105 shadow-lg shadow-violet-500/30">
+                        Hire Me
+                    </a>
+
+                    <a href="#projects"
+                        class="border border-violet-500 hover:bg-violet-600 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105">
+                        View Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+            <div class="relative flex justify-center">
+
+                <div class="absolute w-[350px] h-[350px] bg-violet-500 rounded-full blur-[120px] opacity-30">
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Tanya"
+                    class="hero-image relative w-[320px] h-[320px] md:w-[430px] md:h-[430px] rounded-full object-cover border-4 border-violet-500 shadow-[0_0_80px_rgba(139,92,246,0.7)]" />
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about" class="pt-10 md:pt-20 px-6 md:px-10">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="mb-20">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    About Me
+                </h2>
+
+                <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-20 items-center">
 
                 <!-- Left -->
                 <div>
 
-                    <p class="text-violet-400 text-xl font-medium mb-4">
-                        Hello, I'm
+                    <h3 class="text-3xl font-semibold text-violet-400 mb-8 leading-snug">
+                        Passionate Laravel Developer
+                    </h3>
+
+                    <p class="text-gray-400 text-lg leading-9 mb-6">
+                        I am Tanya Maurya, a passionate web developer with
+                        experience in Laravel, frontend development, API
+                        integration and authentication systems.
                     </p>
 
-                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-                        Tanya Maurya
-                    </h1>
-
-                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
-                        PHP Laravel Developer
-                    </h2>
-
-                    <p class="text-gray-400 text-lg leading-9 mb-10 max-w-2xl">
-                        I build responsive websites, REST APIs, authentication
-                        systems and modern user-friendly interfaces using Laravel,
-                        Tailwind CSS and frontend technologies.
+                    <p class="text-gray-400 text-lg leading-9">
+                        I enjoy creating responsive and user-friendly websites
+                        with modern UI, clean code and smooth user experiences.
                     </p>
 
-                    <div class="flex flex-wrap gap-5">
+                </div>
 
-                        <a href="#contact"
-                            class="bg-violet-600 hover:bg-violet-700 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105 shadow-lg shadow-violet-500/30">
-                            Hire Me
-                        </a>
+                <!-- Right -->
+                <div class="grid sm:grid-cols-2 gap-6">
 
-                        <a href="#projects"
-                            class="border border-violet-500 hover:bg-violet-600 px-8 py-4 rounded-2xl font-medium transition duration-300 hover:scale-105">
-                            View Projects
-                        </a>
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            Frontend
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            HTML, CSS, JavaScript, Bootstrap & Tailwind CSS
+                        </p>
+
+                    </div>
+
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            Backend
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            PHP, Laravel & MySQL Development
+                        </p>
+
+                    </div>
+
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            APIs
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            REST API Integration & Authentication Systems
+                        </p>
+
+                    </div>
+
+                    <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
+
+                        <h4 class="text-2xl font-semibold mb-4">
+                            Tools
+                        </h4>
+
+                        <p class="text-gray-400 leading-7">
+                            VS Code, GitHub, Postman & Modern Workflow
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="pt-10 md:pt-20 px-6 md:px-10">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="mb-20">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    Projects
+                </h2>
+
+                <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card -->
+                <div
+                    class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
+
+                    <div class="overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4" alt="project"
+                            class="w-full h-56 object-cover transition duration-500" />
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Food Ordering Website
+                        </h3>
+
+                        <p class="text-gray-400 leading-7 mb-5">
+                            Responsive food ordering website built using Laravel,
+                            Bootstrap and MySQL.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Laravel
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Bootstrap
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                MySQL
+                            </span>
+
+                        </div>
+
+                        <button class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
+
+                    <div class="overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="project"
+                            class="w-full h-56 object-cover transition duration-500" />
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Blog Management System
+                        </h3>
+
+                        <p class="text-gray-400 leading-7 mb-5">
+                            Modern blog platform with authentication and admin
+                            dashboard.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                PHP
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Laravel
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                API
+                            </span>
+
+                        </div>
+
+                        <button class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
+
+                    <div class="overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="project"
+                            class="w-full h-56 object-cover transition duration-500" />
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Student Management System
+                        </h3>
+
+                        <p class="text-gray-400 leading-7 mb-5">
+                            Dashboard system for managing students, attendance
+                            and records.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-6">
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Laravel
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                Dashboard
+                            </span>
+
+                            <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
+                                MySQL
+                            </span>
+
+                        </div>
+
+                        <button class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
+                            View Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="pt-10 md:pt-20 px-6 md:px-10 pb-16">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="mb-20">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    Contact Me
+                </h2>
+
+                <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-14">
+
+                <!-- Left -->
+                <div>
+
+                    <h3 class="text-3xl font-semibold mb-6 text-violet-400">
+                        Let's Work Together
+                    </h3>
+
+                    <p class="text-gray-400 text-lg leading-8 mb-10">
+                        I am available for freelance projects, business websites,
+                        portfolio websites and Laravel development work.
+                    </p>
+
+                    <div class="space-y-5">
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h4 class="text-xl font-semibold mb-2">
+                                Email
+                            </h4>
+
+                            <p class="text-gray-400">
+                                tanyamaurya998@gmail.com
+                            </p>
+
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h4 class="text-xl font-semibold mb-2">
+                                Instagram
+                            </h4>
+
+                            <a href="https://instagram.com/mauryatanya12" target="_blank"
+                                class="text-gray-400 hover:text-violet-400 transition duration-300 decoration-none">
+                                @mauryatanya12
+                            </a>
+
+                        </div>
+
+                        <div class="glass rounded-2xl p-5">
+
+                            <h4 class="text-xl font-semibold mb-2">
+                                WhatsApp
+                            </h4>
+
+                            <p class="text-gray-400">
+                                +91 8604955266
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
 
                 <!-- Right -->
-                <div class="relative flex justify-center">
+                <div class="glass rounded-3xl p-8">
 
-                    <div class="absolute w-[350px] h-[350px] bg-violet-500 rounded-full blur-[120px] opacity-30">
-                    </div>
+                    <form class="space-y-6">
 
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Tanya"
-                        class="hero-image relative w-[320px] h-[320px] md:w-[430px] md:h-[430px] rounded-full object-cover border-4 border-violet-500 shadow-[0_0_80px_rgba(139,92,246,0.7)]" />
+                        <div>
+
+                            <label class="block mb-2 text-gray-300">
+                                Your Name
+                            </label>
+
+                            <input type="text" placeholder="Enter your name"
+                                class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
+
+                        </div>
+
+                        <div>
+
+                            <label class="block mb-2 text-gray-300">
+                                Email Address
+                            </label>
+
+                            <input type="email" placeholder="Enter your email"
+                                class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
+
+                        </div>
+
+                        <div>
+
+                            <label class="block mb-2 text-gray-300">
+                                Message
+                            </label>
+
+                            <textarea rows="5" placeholder="Write your message..."
+                                class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500"></textarea>
+
+                        </div>
+
+                        <button
+                            class="w-full bg-violet-600 hover:bg-violet-700 px-7 py-4 rounded-2xl font-medium transition duration-300 hover:scale-[1.02] shadow-lg shadow-violet-500/30">
+                            Send Message
+                        </button>
+
+                    </form>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-        <!-- About -->
-        <section id="about" class="pt-10 md:pt-20 px-6 md:px-10">
+    </section>
 
-            <div class="max-w-7xl mx-auto">
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 px-6">
 
-                <!-- Heading -->
-                <div class="mb-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
 
-                    <h2 class="text-4xl md:text-5xl font-bold mb-5">
-                        About Me
-                    </h2>
+            <h2 class="text-2xl font-bold text-violet-400">
+                Tanya Maurya
+            </h2>
 
-                    <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
+            <p class="text-gray-500 text-center">
+                © 2026 Tanya Maurya. All Rights Reserved.
+            </p>
 
-                </div>
+        </div>
 
-                <div class="grid md:grid-cols-2 gap-20 items-center">
+    </footer>
 
-                    <!-- Left -->
-                    <div>
+    <!-- Script -->
+    <script>
 
-                        <h3 class="text-3xl font-semibold text-violet-400 mb-8 leading-snug">
-                            Passionate Laravel Developer
-                        </h3>
+        const menuBtn = document.querySelector(".menu-btn");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
 
-                        <p class="text-gray-400 text-lg leading-9 mb-6">
-                            I am Tanya Maurya, a passionate web developer with
-                            experience in Laravel, frontend development, API
-                            integration and authentication systems.
-                        </p>
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
 
-                        <p class="text-gray-400 text-lg leading-9">
-                            I enjoy creating responsive and user-friendly websites
-                            with modern UI, clean code and smooth user experiences.
-                        </p>
-
-                    </div>
-
-                    <!-- Right -->
-                    <div class="grid sm:grid-cols-2 gap-6">
-
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
-
-                            <h4 class="text-2xl font-semibold mb-4">
-                                Frontend
-                            </h4>
-
-                            <p class="text-gray-400 leading-7">
-                                HTML, CSS, JavaScript, Bootstrap & Tailwind CSS
-                            </p>
-
-                        </div>
-
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
-
-                            <h4 class="text-2xl font-semibold mb-4">
-                                Backend
-                            </h4>
-
-                            <p class="text-gray-400 leading-7">
-                                PHP, Laravel & MySQL Development
-                            </p>
-
-                        </div>
-
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
-
-                            <h4 class="text-2xl font-semibold mb-4">
-                                APIs
-                            </h4>
-
-                            <p class="text-gray-400 leading-7">
-                                REST API Integration & Authentication Systems
-                            </p>
-
-                        </div>
-
-                        <div class="glass rounded-3xl p-7 hover:-translate-y-2 transition duration-500">
-
-                            <h4 class="text-2xl font-semibold mb-4">
-                                Tools
-                            </h4>
-
-                            <p class="text-gray-400 leading-7">
-                                VS Code, GitHub, Postman & Modern Workflow
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="pt-10 md:pt-20 px-6 md:px-10">
-
-            <div class="max-w-7xl mx-auto">
-
-                <!-- Heading -->
-                <div class="mb-20">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-5">
-                        Projects
-                    </h2>
-
-                    <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
-
-                </div>
-
-                <!-- Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Card -->
-                    <div
-                        class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
-
-                        <div class="overflow-hidden">
-
-                            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4" alt="project"
-                                class="w-full h-56 object-cover transition duration-500" />
-
-                        </div>
-
-                        <div class="p-6">
-
-                            <h3 class="text-2xl font-semibold mb-3">
-                                Food Ordering Website
-                            </h3>
-
-                            <p class="text-gray-400 leading-7 mb-5">
-                                Responsive food ordering website built using Laravel,
-                                Bootstrap and MySQL.
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mb-6">
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Laravel
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Bootstrap
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    MySQL
-                                </span>
-
-                            </div>
-
-                            <button
-                                class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
-                                View Project
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Card -->
-                    <div
-                        class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
-
-                        <div class="overflow-hidden">
-
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="project"
-                                class="w-full h-56 object-cover transition duration-500" />
-
-                        </div>
-
-                        <div class="p-6">
-
-                            <h3 class="text-2xl font-semibold mb-3">
-                                Blog Management System
-                            </h3>
-
-                            <p class="text-gray-400 leading-7 mb-5">
-                                Modern blog platform with authentication and admin
-                                dashboard.
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mb-6">
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    PHP
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Laravel
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    API
-                                </span>
-
-                            </div>
-
-                            <button
-                                class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
-                                View Project
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Card -->
-                    <div
-                        class="project-card glass rounded-3xl overflow-hidden transition duration-500 hover:-translate-y-3">
-
-                        <div class="overflow-hidden">
-
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="project"
-                                class="w-full h-56 object-cover transition duration-500" />
-
-                        </div>
-
-                        <div class="p-6">
-
-                            <h3 class="text-2xl font-semibold mb-3">
-                                Student Management System
-                            </h3>
-
-                            <p class="text-gray-400 leading-7 mb-5">
-                                Dashboard system for managing students, attendance
-                                and records.
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mb-6">
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Laravel
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    Dashboard
-                                </span>
-
-                                <span class="bg-violet-600/20 text-violet-400 px-4 py-1 rounded-full text-sm">
-                                    MySQL
-                                </span>
-
-                            </div>
-
-                            <button
-                                class="bg-violet-600 hover:bg-violet-700 px-5 py-3 rounded-xl transition duration-300">
-                                View Project
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="pt-10 md:pt-20 px-6 md:px-10 pb-16">
-            <div class="max-w-7xl mx-auto">
-
-                <!-- Heading -->
-                <div class="mb-20">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-5">
-                        Contact Me
-                    </h2>
-
-                    <div class="w-24 h-1 bg-violet-500 rounded-full"></div>
-
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-14">
-
-                    <!-- Left -->
-                    <div>
-
-                        <h3 class="text-3xl font-semibold mb-6 text-violet-400">
-                            Let's Work Together
-                        </h3>
-
-                        <p class="text-gray-400 text-lg leading-8 mb-10">
-                            I am available for freelance projects, business websites,
-                            portfolio websites and Laravel development work.
-                        </p>
-
-                        <div class="space-y-5">
-
-                            <div class="glass rounded-2xl p-5">
-
-                                <h4 class="text-xl font-semibold mb-2">
-                                    Email
-                                </h4>
-
-                                <p class="text-gray-400">
-                                    tanyamaurya998@gmail.com
-                                </p>
-
-                            </div>
-
-                            <div class="glass rounded-2xl p-5">
-
-                                <h4 class="text-xl font-semibold mb-2">
-                                    Instagram
-                                </h4>
-
-                                <a href="https://instagram.com/mauryatanya12" target="_blank"
-                                    class="text-gray-400 hover:text-violet-400 transition duration-300 decoration-none">
-                                    @mauryatanya12
-                                </a>
-
-                            </div>
-
-                            <div class="glass rounded-2xl p-5">
-
-                                <h4 class="text-xl font-semibold mb-2">
-                                    WhatsApp
-                                </h4>
-
-                                <p class="text-gray-400">
-                                    +91 8604955266
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Right -->
-                    <div class="glass rounded-3xl p-8">
-
-                        <form class="space-y-6">
-
-                            <div>
-
-                                <label class="block mb-2 text-gray-300">
-                                    Your Name
-                                </label>
-
-                                <input type="text" placeholder="Enter your name"
-                                    class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
-
-                            </div>
-
-                            <div>
-
-                                <label class="block mb-2 text-gray-300">
-                                    Email Address
-                                </label>
-
-                                <input type="email" placeholder="Enter your email"
-                                    class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500" />
-
-                            </div>
-
-                            <div>
-
-                                <label class="block mb-2 text-gray-300">
-                                    Message
-                                </label>
-
-                                <textarea rows="5" placeholder="Write your message..."
-                                    class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-violet-500"></textarea>
-
-                            </div>
-
-                            <button
-                                class="w-full bg-violet-600 hover:bg-violet-700 px-7 py-4 rounded-2xl font-medium transition duration-300 hover:scale-[1.02] shadow-lg shadow-violet-500/30">
-                                Send Message
-                            </button>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Footer -->
-        <footer class="border-t border-white/10 py-8 px-6">
-
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
-
-                <h2 class="text-2xl font-bold text-violet-400">
-                    Tanya Maurya
-                </h2>
-
-                <p class="text-gray-500 text-center">
-                    © 2026 Tanya Maurya. All Rights Reserved.
-                </p>
-
-            </div>
-
-        </footer>
-
-        <!-- Script -->
-        <script>
-
-            const menuBtn = document.querySelector(".menu-btn");
-            const mobileMenu = document.querySelector(".mobile-menu");
-            const mobileLinks = document.querySelectorAll(".mobile-link");
-
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("active");
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("active");
             });
+        });
 
-            mobileLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    mobileMenu.classList.remove("active");
-                });
-            });
+    </script>
 
-        </script>
+</body>
 
-    </body>
-
-    >>>>>>> 3a28216197b0aa919656c16ff7cdaf385566b660
-
-    </html>
+>>>>>>> 3a28216197b0aa919656c16ff7cdaf385566b660
+</html>
